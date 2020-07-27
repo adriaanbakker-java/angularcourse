@@ -14,7 +14,7 @@ export class ProductListComponent implements OnInit {
       //throw new Error("Method not implemented.");
       filterBy = filterBy.toLocaleLowerCase();
 
-      return this.products.filter((product: IProduct) => 
+      return this.products.filter((product: IProduct) =>
                     product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1);
     }
     ngOnInit(): void {
@@ -26,7 +26,7 @@ export class ProductListComponent implements OnInit {
     showImage: boolean = false;
     //listFilter: string = 'cart';
 
-    
+
     constructor() {
       this.filteredProducts = this.products;
       this.listFilter = 'cart';
@@ -99,4 +99,8 @@ export class ProductListComponent implements OnInit {
     toggleImage(): void {
             this.showImage = !this.showImage;
     }
+
+   onRatingClicked(message: string): void {
+     this.pageTitle = 'Product List:' + message;
+   }
 }
