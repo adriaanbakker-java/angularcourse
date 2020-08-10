@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import {ProductListComponent} from './product-list.component';
 import {ProductDetailComponent} from './product-detail/product-detail.component';
 import {ConvertToSpacesPipe} from '../shared/convert-to-spaces.pipe';
-import {StarComponent} from '../shared/star/star.component';
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {ProductDetailGuard} from './product-detail.guard';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -14,8 +14,7 @@ import {ProductDetailGuard} from './product-detail.guard';
   declarations: [
     ProductListComponent,
     ProductDetailComponent,
-    ConvertToSpacesPipe,
-    StarComponent
+    ConvertToSpacesPipe
   ],
   imports: [
     CommonModule,
@@ -25,7 +24,8 @@ import {ProductDetailGuard} from './product-detail.guard';
       { path: 'products/:id',
         canActivate: [ProductDetailGuard],
         component: ProductDetailComponent}]
-    )
+    ),
+    SharedModule
   ]
 })
 export class ProductModule { }
