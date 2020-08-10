@@ -1,0 +1,1 @@
+ ng generate module products/product --flat -m app
