@@ -1,2 +1,5 @@
 ng generate module products/product --flat -m app
 ng generate module shared/shared --flat -m products/product.module
+ng generate module ./app-routing --flat -m app
+ng generate module products/product-routing --flat -m app
+
